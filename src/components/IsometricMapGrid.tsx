@@ -5,7 +5,6 @@ import { IMapBounds } from "./Map";
 interface IMapGridProps {
   mapBounds: IMapBounds;
   drawBounds: IMapBounds;
-  zoomLevel: number;
   gridDistance?: number;
   transformPoint?: (point: IPoint) => IPoint;
 }
@@ -15,7 +14,7 @@ const IsometricMapGrid: React.FunctionComponent<IMapGridProps> = ({
   transformPoint = transformPointIsometric,
   ...props
 }) => {
-  const zoomGridDistance = props.zoomLevel * gridDistance;
+  const zoomGridDistance = gridDistance;
   const startPoint = { x: 0, y: 0 };
   const point1 = transformPoint({ x: props.mapBounds.x, y: props.mapBounds.y });
   const point2 = transformPoint({
