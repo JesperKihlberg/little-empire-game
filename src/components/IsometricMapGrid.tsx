@@ -4,7 +4,6 @@ import { IMapBounds } from "./Map";
 
 interface IMapGridProps {
   mapBounds: IMapBounds;
-  drawBounds: IMapBounds;
   gridDistance?: number;
   transformPoint?: (point: IPoint) => IPoint;
 }
